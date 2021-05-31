@@ -127,8 +127,78 @@
 		.chart-container h3{
 			color: #8d8c8c;
 			font-weight: 700;
+			font-size: 26px;
 			margin-top: 25px;
 			margin-bottom: 40px;
+		}
+		.custom-left-chart-panel{
+			list-style: none;
+			padding: 0;
+			font-weight: 700;
+			font-size: 15px;
+		}
+		.custom-left-chart-panel li:nth-child(1){
+			color: #eacc1b;
+		}
+		.custom-left-chart-panel li:nth-child(2){
+			color: #b6ce2e;
+		}
+		.custom-left-chart-panel li:nth-child(3){
+			color: #ed327c;
+		}
+		.custom-left-chart-panel li:nth-child(4){
+			color: #45c4dd;
+		}
+		.custom-left-chart-panel li:nth-child(5){
+			color: #ed7d33;
+		}
+		.custom-left-chart-panel img{
+			width: 40px;
+			margin-right: 8px;
+		}
+		.left-chart-panel-note{
+			font-size: 14px;
+			font-weight: 600;
+			color: #8d8c8c;
+		}
+		.left-chart-panel-note span{
+			display: block;
+    margin-bottom: 10px;
+		}
+		.custom-right-chart-panel h4{
+			font-size: 18px;
+    font-weight: 700;
+    color: #8d8c8c;
+    padding-top: 30px;
+    margin-bottom: 20px;
+		}
+		.custom-right-chart-panel ul{
+			list-style: none;
+			padding: 0;
+			font-size: 16px;
+			font-weight: 600;
+		}
+		.custom-right-chart-panel ul > li{
+			margin-bottom: 18px;
+			font-weight: 700;
+		}
+		.custom-right-chart-panel ul > li:nth-child(1){
+			color: #888787;
+		}
+		.custom-right-chart-panel ul > li:nth-child(2){
+			color: #eacc1b;
+		}
+		.custom-right-chart-panel ul > li:nth-child(3){
+			color: #b6ce2e;
+		}
+		.custom-right-chart-panel ul > li:nth-child(4){
+			color: #ed327c;
+		}
+		.custom-right-chart-panel ul > li:nth-child(5){
+			color: #45c4dd;
+		}
+		.custom-right-chart-panel ul > li:nth-child(6){
+			color: #ed7d33;
 		}
 	</style>
 </head>
@@ -286,9 +356,9 @@
 		</div>
 		<div class="main-content chart-container" style="padding: 0 36px;">
 			<div class="row">
-				<div class="col-4">
+				<div class="col-3 p-0">
 					<h3>Big 5 Personality Traits</h3>
-					<ul>
+					<ul class="custom-left-chart-panel">
 						<li>
 							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_6rJTKwq93wGX9R4">
 							OPENNESS
@@ -309,69 +379,144 @@
 							EXTRAVERSION
 						</li>
 					</ul>
-					<p>
-						Score Ranges
-						<br>
-						Scores above 80% are considered ‘high’
-						and below 65% are considered ‘low’.
+					<p class="left-chart-panel-note">
+						<span>Score Ranges</span>
+						
+						Scores above 80% are considered 'high'
+						and below 65% are considered 'low'.
 					</p>
 				</div>
-				<div class="col-4">
+				<div class="col-5 ml-0">
 					<div id="container" style="width: 100%; margin: auto;"></div>
 				</div>
-				<div class="col-4">
+				<div class="col-4 custom-right-chart-panel">
 					<h4>Innovativeness Scale & Indicators</h4>
 					<ul>
 						<li class="row">
-							<div class="col-6">
+							<div class="col-5">
 								Lower score
 							</div>
-							<div class="col-6">
+							<div class="col-7">
 								Higher score
 							</div>
 						</li>
 						<li class="row">
-							<div class="col-6">
+							<div class="col-5">
 								Prefer routine 
 							</div>
-							<div class="col-6">
+							<div class="col-7">
 								Curious & creative
 							</div>
 						</li>
 						<li class="row">
-							<div class="col-6">
+							<div class="col-5">
 								Me-first 
 							</div>
-							<div class="col-6">
+							<div class="col-7">
 								Patient & polite
 							</div>
 						</li>
 						<li class="row">
-							<div class="col-6">
+							<div class="col-5">
 								Insecure
 							</div>
-							<div class="col-6">
+							<div class="col-7">
 								Confident
 							</div>
 						</li>
 						<li class="row">
-							<div class="col-6">
+							<div class="col-5">
 								Impulsive
 							</div>
-							<div class="col-6">
+							<div class="col-7">
 								Goal-oriented & organized
 							</div>
 						</li>
 						<li class="row">
-							<div class="col-6">
+							<div class="col-5">
 								Introspective
 							</div>
-							<div class="col-6">
+							<div class="col-7">
 								Sociable & assertive
 							</div>
 						</li>
 					</ul>
-					<p>Innovativeness is strongly correlated with scores for openness above 80% and scores above 65% for agreeableness and emotional stability. </p>
+					<p class="left-chart-panel-note mt-4">Innovativeness is strongly correlated with scores for openness above 80% and scores above 65% for agreeableness and emotional stability. </p>
+				</div>
+			</div>
+			<div style="height: 20px;background: grey;height: 30px;background: grey;margin: 0 -37px;">
+				
+			</div>
+			<div class="row">
+				<div class="col-3 p-0">
+					<h3>Adaptability Quotient</h3>
+					<ul class="custom-left-chart-panel">
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_6rJTKwq93wGX9R4">
+							EXPERIMENTAL ADAPTABILITY
+						</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_4U7HCI2Vy6VPOBg">
+							CULTURAL ADAPTABILITY</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_724GoVU3rEpUf30">
+							SITUATIONAL ADAPTABILITY
+						</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_2sDE22Ab1RcDoJo">
+							EDUCATIONAL ADAPTABILITY
+						</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_e4zt1gJ3FPkekDk">
+							INTERPERSONAL ADAPTABILITY
+						</li>
+					</ul>
+					<p class="left-chart-panel-note">
+						<span>Score Ranges</span>
+						
+						Scores above 80% are considered 'high'
+						and below 65% are considered 'low'.
+					</p>
+				</div>
+				<div class="col-5 ml-0">
+					<div id="container1" style="width: 100%; margin: auto;"></div>
+				</div>
+				<div class="col-4 custom-right-chart-panel">
+					<h4>Willingness & Ability to Adapt</h4>
+					<ul>
+						<li class="row">
+							<div class="col-12">
+								Measures
+							</div>
+							
+						</li>
+						<li class="row">
+							<div class="col-12">
+								Solve atypical, ill-defined, complex problems 
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-12">
+								Explore & interact with new & diverse cultures 
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-12">
+								Manage reactions to uncertain or crisis situations 
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-12">
+								Learn new tasks, technologies & procedures 
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-12">
+								Adjust behaviour while working with others 
+							</div>
+						</li>
+					</ul>
+					<p class="left-chart-panel-note mt-4">Innovativeness is strongly correlated with scores for openness above 80% and scores above 65% for agreeableness and emotional stability. </p>
 				</div>
 			</div>
 		</div>
@@ -439,6 +584,74 @@
 		}
 
 		var chart = Highcharts.chart("container", {
+			title: {
+			    text: ''
+			},
+
+			chart: {
+				type: "bar"
+				
+			},
+			credits: {
+				enabled: false,
+			},
+			plotOptions: {
+				series: {
+					pointWidth: 20,
+					borderWidth: 1,
+					borderRadius: "3%",
+					events: {
+						legendItemClick: function () {
+							return false;
+						},
+					},
+				},
+			},
+			legend: {
+				enabled: false,
+			},
+			yAxis: {
+				title: {
+					text: "",
+				},
+				labels: {
+				    enabled: false
+				 },
+				 // opposite: true
+
+			},
+			
+			xAxis: {
+				type: "category",
+				labels: {
+    				enabled: false
+  				},
+  				max: 10,
+
+
+				// min: 0,
+				// labels: {
+				// 	animate: true,
+				// 	useHTML: true,
+				// 	formatter: function () {
+				// 		console.log(this);
+				// 		return my_imgs[this.pos] + this.value;
+				// 	},
+				// },
+			},
+			series: [
+				{
+					dataSorting: {
+						enabled: true,
+						sortKey: "",
+					},
+					name: "",
+					data: getMoreData(data_obj),
+				},
+			],
+		});
+
+		var chart = Highcharts.chart("container1", {
 			title: {
 			    text: ''
 			},
