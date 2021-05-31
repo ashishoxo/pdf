@@ -124,6 +124,12 @@
 			font-size: 17px;
 
 		}
+		.chart-container h3{
+			color: #8d8c8c;
+			font-weight: 700;
+			margin-top: 25px;
+			margin-bottom: 40px;
+		}
 	</style>
 </head>
 <body>
@@ -278,12 +284,96 @@
 			</div>
 			
 		</div>
-		<div class="main-content">
-			<div class="main-content-heading" style="height: 700px;">
-				
-				
+		<div class="main-content chart-container" style="padding: 0 36px;">
+			<div class="row">
+				<div class="col-4">
+					<h3>Big 5 Personality Traits</h3>
+					<ul>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_6rJTKwq93wGX9R4">
+							OPENNESS
+						</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_4U7HCI2Vy6VPOBg">
+							AGREEABLENESS</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_724GoVU3rEpUf30">
+							EMOTIONAL STABILITY
+						</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_2sDE22Ab1RcDoJo">
+							CONSCIENTIOUSNESS
+						</li>
+						<li>
+							<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_e4zt1gJ3FPkekDk">
+							EXTRAVERSION
+						</li>
+					</ul>
+					<p>
+						Score Ranges
+						<br>
+						Scores above 80% are considered ‘high’
+						and below 65% are considered ‘low’.
+					</p>
+				</div>
+				<div class="col-4">
+					<div id="container" style="width: 100%; margin: auto;"></div>
+				</div>
+				<div class="col-4">
+					<h4>Innovativeness Scale & Indicators</h4>
+					<ul>
+						<li class="row">
+							<div class="col-6">
+								Lower score
+							</div>
+							<div class="col-6">
+								Higher score
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-6">
+								Prefer routine 
+							</div>
+							<div class="col-6">
+								Curious & creative
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-6">
+								Me-first 
+							</div>
+							<div class="col-6">
+								Patient & polite
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-6">
+								Insecure
+							</div>
+							<div class="col-6">
+								Confident
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-6">
+								Impulsive
+							</div>
+							<div class="col-6">
+								Goal-oriented & organized
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-6">
+								Introspective
+							</div>
+							<div class="col-6">
+								Sociable & assertive
+							</div>
+						</li>
+					</ul>
+					<p>Innovativeness is strongly correlated with scores for openness above 80% and scores above 65% for agreeableness and emotional stability. </p>
+				</div>
 			</div>
-			
 		</div>
 		<div class="main-footer">
 			<p class="main-footer-primary">Thank you for taking the <strong>innomapper (beta).</strong> If you have any questions about the test and/or your results, write to us at:</p>
@@ -292,5 +382,129 @@
 	</div>
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src=https://code.highcharts.com/highcharts.js></script>
+
+	<script type="text/javascript">
+		if (chart) {
+			chart.destroy();
+		}
+		let all_traits = [
+			"",
+			"",
+			"",
+			"",
+			"",
+		];
+		let my_imgs = [
+			'<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_6rJTKwq93wGX9R4" width="30" height="30"></img>',
+			'<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_2sDE22Ab1RcDoJo" width="30" height="30"></img>',
+			'<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_e4zt1gJ3FPkekDk" width="30" height="30"></img>',
+			'<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_4U7HCI2Vy6VPOBg" width="30" height="30"></img>',
+			'<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_724GoVU3rEpUf30" width="30" height="30"></img>',
+		];
+
+		let my_colors = ["#E9CBLA", "#41C3DC", "#ED7D33", "#B6CD2D", "#E20778"];
+
+		my_colors.reverse();
+		let trait_way = [];
+		for (let i = 0; i < 5; i++) {
+			let t = parseInt(Math.random() * 5);
+			while (t === 0) {
+				t = parseInt(Math.random() * 5);
+			}
+			trait_way.push(t);
+		}
+
+		let data_obj = [];
+		for (let i = 0; i < trait_way.length; i++) {
+			data_obj.push({
+				prop: all_traits[i],
+				way: trait_way[i],
+			});
+		}
+
+		trait_way.sort();
+		for (let j = 0; j < Object.keys(data_obj).length; j++) {
+			data_obj[j].clr = my_colors[j];
+		}
+
+		function getMoreData(data) {
+			return data.map(function (item, i) {
+				return {
+					name: item.prop,
+					y: item.way,
+					color: item.clr,
+				};
+			});
+		}
+
+		var chart = Highcharts.chart("container", {
+			title: {
+			    text: ''
+			},
+
+			chart: {
+				type: "bar"
+				
+			},
+			credits: {
+				enabled: false,
+			},
+			plotOptions: {
+				series: {
+					pointWidth: 20,
+					borderWidth: 1,
+					borderRadius: "3%",
+					events: {
+						legendItemClick: function () {
+							return false;
+						},
+					},
+				},
+			},
+			legend: {
+				enabled: false,
+			},
+			yAxis: {
+				title: {
+					text: "",
+				},
+				labels: {
+				    enabled: false
+				 },
+				 // opposite: true
+
+			},
+			
+			xAxis: {
+				type: "category",
+				labels: {
+    				enabled: false
+  				},
+  				max: 10,
+
+
+				// min: 0,
+				// labels: {
+				// 	animate: true,
+				// 	useHTML: true,
+				// 	formatter: function () {
+				// 		console.log(this);
+				// 		return my_imgs[this.pos] + this.value;
+				// 	},
+				// },
+			},
+			series: [
+				{
+					dataSorting: {
+						enabled: true,
+						sortKey: "",
+					},
+					name: "",
+					data: getMoreData(data_obj),
+				},
+			],
+		});
+	</script>
 </body>
 </html>
