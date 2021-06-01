@@ -163,14 +163,14 @@
 		}
 		.left-chart-panel-note span{
 			display: block;
-    margin-bottom: 10px;
-		}
-		.custom-right-chart-panel h4{
-			font-size: 18px;
-    font-weight: 700;
-    color: #8d8c8c;
-    padding-top: 30px;
-    margin-bottom: 20px;
+	    margin-bottom: 10px;
+			}
+			.custom-right-chart-panel h4{
+				font-size: 18px;
+	    font-weight: 700;
+	    color: #8d8c8c;
+	    padding-top: 30px;
+	    margin-bottom: 20px;
 		}
 		.custom-right-chart-panel ul{
 			list-style: none;
@@ -200,10 +200,85 @@
 		.custom-right-chart-panel ul > li:nth-child(6){
 			color: #ed7d33;
 		}
+
+		.grey-stripe{
+			color: white;
+			font-weight: 700;
+			background: grey;background: grey;margin: 0 -37px;
+		}
+		.grey-stripe .left-content{
+			text-align: right;line-height: 40px;
+			
+
+		}
+
+		.grey-stripe .right-content{
+			font-size: 30px;
+		    display: flex;
+		    line-height: 40px;
+		    justify-content: space-between;
+		    padding: 0px 19px 0px 28px;
+		}
+		.left-arrow{
+			border-bottom: 2px dotted #d7d8d9;
+    		
+    		height: 0;
+    		
+    		position: relative;
+		}
+		.left-arrow:before{
+			content: "\A";
+			border-style: solid;
+			border-width: 6px 15px 6px 0;
+			border-color: transparent #888787 transparent transparent;
+			position: absolute;
+			top: -5px;
+
+		}
+		.left-arrow:after{
+			content: "\A";
+			height: 10px;
+			border-radius: 50%;
+			width: 10px;
+			border: 2px solid #888787;
+			position: absolute;
+			right: -11px;
+			top: -4px;
+		}
+		.right-arrow{
+			border-bottom: 2px dotted #d7d8d9;
+    		
+    		height: 0;
+    		
+    		position: relative;
+		}
+		.right-arrow:before{
+			content: "\A";
+			border-style: solid;
+			border-width: 6px 0 6px 15px;
+    		border-color: transparent transparent transparent #888787;
+			position: absolute;
+			top: -5px;
+			right: 0;
+
+		}
+		.right-arrow:after{
+			content: "\A";
+			height: 10px;
+			border-radius: 50%;
+			width: 10px;
+			border: 2px solid #888787;
+			position: absolute;
+			left: -11px;
+			top: -4px;
+		}
+		.custom-left-chart-panel > li{
+			margin-bottom: 2px;
+		}
 	</style>
 </head>
 <body>
-	<div class="main-page">
+	<div id="content" class="main-page">
 		<div class="main-header">
 			<div class="image-wrapper">
 				<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_7QgPhrlA0MMWQBg">
@@ -386,8 +461,24 @@
 						and below 65% are considered 'low'.
 					</p>
 				</div>
-				<div class="col-5 ml-0">
-					<div id="container" style="width: 100%; margin: auto;"></div>
+				<div class="col-5 ml-0" style="position: relative;margin-top: 85px">
+					<div id="container" style="width: 100%; margin: auto; height: 365px"></div>
+					<div class="row" style="    position: absolute;bottom: 52px;width: 100%;padding: 0 10px;">
+						<div class="col-8" style="padding-right: 36px;">
+							<div class="left-arrow"></div>
+							<div style="text-align: center;line-height: 2;color: #8e89a1">
+								<65%
+							</div>
+						</div>
+						<div class="col-4" style="padding-left: 60px;">
+							<div class="right-arrow"></div>
+							<div style="text-align: left;line-height: 2;color: #8e89a1">
+								>80%
+							</div>
+						</div>
+					</div>
+					
+					
 				</div>
 				<div class="col-4 custom-right-chart-panel">
 					<h4>Innovativeness Scale & Indicators</h4>
@@ -444,8 +535,18 @@
 					<p class="left-chart-panel-note mt-4">Innovativeness is strongly correlated with scores for openness above 80% and scores above 65% for agreeableness and emotional stability. </p>
 				</div>
 			</div>
-			<div style="height: 20px;background: grey;height: 30px;background: grey;margin: 0 -37px;">
-				
+			<div class="row grey-stripe" style="">
+				<div class="col-3 left-content" style="">
+					PERCENT (%)
+				</div>
+				<div class="col-5 right-content" style="">
+					<div>0</div>
+					<div>20</div>
+					<div>40</div>
+					<div>60</div>
+					<div>80</div>
+					<div>100</div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-3 p-0">
@@ -478,8 +579,23 @@
 						and below 65% are considered 'low'.
 					</p>
 				</div>
-				<div class="col-5 ml-0">
-					<div id="container1" style="width: 100%; margin: auto;"></div>
+				<div class="col-5 ml-0 " style="position: relative;margin-top: 85px">
+					<div id="container1" style="width: 100%; margin: auto;height: 365px"></div>
+					<div class="row" style="position: absolute;bottom: 52px;width: 100%;padding: 0 10px;">
+						<div class="col-8" style="padding-right: 36px;">
+							<div class="left-arrow"></div>
+							<div style="text-align: center;line-height: 2;color: #8e89a1">
+								<65%
+							</div>
+						</div>
+						<div class="col-4" style="padding-left: 100px;">
+							<div class="right-arrow"></div>
+							<div style="text-align: left;line-height: 2;color: #8e89a1">
+								>90%
+							</div>
+							
+						</div>
+					</div>
 				</div>
 				<div class="col-4 custom-right-chart-panel">
 					<h4>Willingness & Ability to Adapt</h4>
@@ -525,20 +641,50 @@
 			<p style="padding-top: 10px;color: #757575">&copy; 2017-2021 All rights reserved.</p>	
 		</div>
 	</div>
+
+	<div id="toPdf"></div>
+	<div style="text-align: center;" class="p-3">
+		
+	<button class="btn btn-primary" style="margin: 0 auto;">Generate PDF</button>
+	</div>
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-	<script src=https://code.highcharts.com/highcharts.js></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 
+	<script src=https://code.highcharts.com/highcharts.js></script>
+	<script type="text/javascript">
+
+		$('body').on('click','button',function(){
+			var doc = new jsPDF('a4');
+			var elementHTML = $('#content').html();
+			console.log(elementHTML);
+			var specialElementHandlers = {
+			    '#toPdf': function (element, renderer) {
+			        return true;
+			    }
+			};
+			var margin = 0;
+			doc.fromHTML(elementHTML, 0, 0, {
+			    'width': 0,
+			    'elementHandlers': specialElementHandlers
+			},function(bla){doc.save('saveInCallback.pdf');},margin);
+			 
+			// Save the PDF
+			// doc.save('sample-document.pdf');
+		});
+			
+	</script>
 	<script type="text/javascript">
 		if (chart) {
 			chart.destroy();
 		}
 		let all_traits = [
-			"",
-			"",
-			"",
-			"",
-			"",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
 		];
 		let my_imgs = [
 			'<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_6rJTKwq93wGX9R4" width="30" height="30"></img>',
@@ -548,12 +694,13 @@
 			'<img src="https://rotman.az1.qualtrics.com/ControlPanel/Graphic.php?IM=IM_724GoVU3rEpUf30" width="30" height="30"></img>',
 		];
 
-		let my_colors = ["#E9CBLA", "#41C3DC", "#ED7D33", "#B6CD2D", "#E20778"];
+		let my_colors = ["#EACC1B", "#B6CD2D", "#E20778", "#41C3DC", "#ED7D33"];
 
 		my_colors.reverse();
 		let trait_way = [];
 		for (let i = 0; i < 5; i++) {
 			let t = parseInt(Math.random() * 5);
+			console.log(t);
 			while (t === 0) {
 				t = parseInt(Math.random() * 5);
 			}
@@ -570,10 +717,12 @@
 
 		trait_way.sort();
 		for (let j = 0; j < Object.keys(data_obj).length; j++) {
+			console.log(my_colors[j]);
 			data_obj[j].clr = my_colors[j];
 		}
 
 		function getMoreData(data) {
+
 			return data.map(function (item, i) {
 				return {
 					name: item.prop,
@@ -626,7 +775,7 @@
 				labels: {
     				enabled: false
   				},
-  				max: 10,
+  				max: 6,
 
 
 				// min: 0,
@@ -643,14 +792,14 @@
 				{
 					dataSorting: {
 						enabled: true,
-						sortKey: "",
+						sortKey: "name",
 					},
 					name: "",
 					data: getMoreData(data_obj),
 				},
 			],
 		});
-
+		console.log(getMoreData(data_obj));
 		var chart = Highcharts.chart("container1", {
 			title: {
 			    text: ''
@@ -694,7 +843,7 @@
 				labels: {
     				enabled: false
   				},
-  				max: 10,
+  				max: 6,
 
 
 				// min: 0,
@@ -711,13 +860,15 @@
 				{
 					dataSorting: {
 						enabled: true,
-						sortKey: "",
+						sortKey: "name",
 					},
-					name: "",
+					name: "1",
 					data: getMoreData(data_obj),
 				},
 			],
 		});
+
+
 	</script>
 </body>
 </html>
