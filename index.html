@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title></title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
 	<!-- CSS only -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -663,7 +666,7 @@
 		(function() {
 		  var form = $('#content'),
 		    cache_width = form.width(),
-		    a4 = [1400, 2000]; // for a4 size paper width and height
+		    a4 = [595.28, 841.89]; // for a4 size paper width and height
 
 		  $('button').on('click', function() {
 		    $('body').scrollTop(0);
@@ -677,7 +680,7 @@
 		          unit: 'px',
 		          format: 'a4',
 		        });
-		      doc.addImage(img, 'JPEG', 20, 20);
+		      doc.addImage(img, 'JPEG', 0, 0);
 		      doc.save('techumber-html-to-pdf.pdf');
 		      form.width(cache_width);
 		    });
